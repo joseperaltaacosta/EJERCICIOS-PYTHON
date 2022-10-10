@@ -18,5 +18,6 @@ Tlf=input("Dime su teléfono:")
 vNom.append(input("Dime un nombre:"))
 vTlf.append(input("Dime su teléfono:"))
 
-print(vNom)
-print(vTlf)
+
+print("El teléfono de ",vNom," es ",vTlf)
+print("El teéfono de ",Nom, " es ",Tlf)
