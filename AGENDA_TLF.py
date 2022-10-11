@@ -19,5 +19,5 @@ vNom.append(input("Dime un nombre:"))
 vTlf.append(input("Dime su teléfono:"))
 
 
-print("El teléfono de ",vNom," es ",vTlf)
+print("El teléfono de ",vNom[0]," es ",vTlf[0])
 print("El teéfono de ",Nom, " es ",Tlf)
