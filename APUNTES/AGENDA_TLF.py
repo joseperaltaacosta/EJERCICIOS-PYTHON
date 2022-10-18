@@ -1,23 +1,30 @@
-'''
-Opción 1:
-Lista para nombres
-Lista para teléfonos
-
-Opción 2:
-LIsta para nombres y teléfonos
-Ejemplo [Alba fea - Teléfono, Laura chupitos - Teléfonos]
-'''
-
-#Opción 1:
 vNom=[]
 vTlf=[]
 
-Nom=input("Dime un nombre:")
-Tlf=input("Dime su teléfono:")
+#Creamos el menu de la agenda
+'''
+1-. Insertar contacto
+2-. Borrar contacto
+3-. Buscar contacto
+4-. Ver todos los contactos
+5-. Salir
+'''
+def pintaMenu():
+    opc=0
+    while (opc < 1 or opc > 5):
+        print("1-. Insertar contacto")
+        print("2-. Borrar contacto")
+        print("3-. Buscar contacto")
+        print("4-. Ver todos los contactos")
+        print("5-. Salir")
+        try:
+            opc=int(input("Dime que quieres hacer:"))
+        except:
+            print("Las opciones son de la 1 a la 5")
 
-vNom.append(input("Dime un nombre:"))
-vTlf.append(input("Dime su teléfono:"))
+    return opc
 
-
-print("El teléfono de ",vNom[0]," es ",vTlf[0])
-print("El teéfono de ",Nom, " es ",Tlf)
+opc = pintaMenu()
+while (opc!=5):
+    nom="Juan"
+    opc=pintaMenu()
