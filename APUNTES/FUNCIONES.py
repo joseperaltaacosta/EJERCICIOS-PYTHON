@@ -13,7 +13,7 @@ minutos = int(input("Dime los minutos: "))
 
 print(f"Horas: {int(minutos/60)} y minutos {minutos%60}")'''
 
-#Funciones definidas por el usuario
+'''#Funciones definidas por el usuario
 def imprimirHola(nombre:str, apellido:str):
     print("Hola",nombre,apellido)
 
@@ -23,4 +23,4 @@ def imprimirNumeros(num1:int,num2:int):
    #print("La suma de", num1, "y", num2, "es:", num1+num2)
    return num1+num2
 suma=imprimirNumeros(1,2)
-print("La suma es:",suma)
+print("La suma es:",suma)'''
