@@ -6,4 +6,4 @@ def descargarCancion(url:str):
     cancion=youtube.streams.get_audio_only()
     cancion.download()
 
-descargarCancion("https://www.youtube.com/watch?v=wohwc9MQt6A")
+descargarCancion("https://www.youtube.com/watch?v=LALq7BIz3bk")
