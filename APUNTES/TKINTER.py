@@ -10,7 +10,7 @@ ventana.config(background="aquamarine")
 ventana.title("TU_PAPI_XHULO")
 ventana.geometry("300x400")
 ventana.resizable(width=False,height=False)
-imagen=PhotoImage(file="foto4.png")
+imagen=PhotoImage(file="FOTO4.png")
 fondo=Label(ventana,image=imagen).place(x=20,y=120)
 
 #Genera el lienzo para pintar componentes
