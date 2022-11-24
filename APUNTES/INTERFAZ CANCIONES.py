@@ -13,10 +13,10 @@ def DESCARGAR():
 ventana = Tk()
 ventana.config(background="aquamarine")
 ventana.title("DESCARGADOR DE CANCIONES")
-ventana.geometry("300x400")
+ventana.geometry("300x450")
 ventana.resizable(False,False)
-imagen=PhotoImage(file="FOTO4.png")
-fondo=Label(ventana,image=imagen).place(x=20,y=120)
+imagen=PhotoImage(file="music.png")
+fondo=Label(ventana,image=imagen).place(x=0,y=120)
 
 #Genera el lienzo para pintar componentes
 frm = ttk.Frame(ventana).pack()
