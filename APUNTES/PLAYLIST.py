@@ -16,4 +16,5 @@ def descargarLista(url:str):
         cancion.streams.get_audio_only().download("CANCIONES/")
         print("***********\n")
 url="https://www.youtube.com/watch?v=u-N0ABBfIpY&list=PLtjIbSCPIhb3d94DG4dR9vqM7bieaHZM4"
+#vaya mierda cancion, ponme breakbeat
 descargarLista(url)
