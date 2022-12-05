@@ -6,9 +6,8 @@ def main(page: ft.Page):
         texto.color="brown"
         page.update()
     def cambiarTextos(e):
-        for i in range (10):
-            text=ft.Text(value=f"Texto numero {i}", size=30)
-            page.add(text)
+        texto.value=textField_Nombre.value
+        page.update()
     #Componente texto
     texto=ft.Text(value="Introducción a Flet",color="blue",size=50)
     page.add(texto) #add hace dos cosas: 1-Añadir 2-Actualizar
@@ -17,5 +16,7 @@ def main(page: ft.Page):
     #Componente Boton
     boton=ft.FloatingActionButton(icon=ft.icons.FAVORITE, on_click=cambiarTextos)
     page.add(boton)
-
+    
+    textField_Nombre=ft.TextField(hint_text="Escribe tu nombre",label="Nombre")
+    page.add(textField_Nombre)
 ft.app(target=main)
