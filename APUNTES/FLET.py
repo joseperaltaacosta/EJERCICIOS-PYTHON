@@ -19,4 +19,13 @@ def main(page: ft.Page):
     
     textField_Nombre=ft.TextField(hint_text="Escribe tu nombre",label="Nombre")
     page.add(textField_Nombre)
+
+    dropDown_Menu=ft.Dropdown(width=300,options=[ft.dropdown.Option("Vieja")])
+    page.add(dropDown_Menu)
+    dropDown_Menu.options.append(ft.dropdown.Option("Nueva"))
+    page.update()
+
+    slider_edad=ft.Slider(min=0,max=100,divisions=100,label="Edad:{value}")
+    page.add(slider_edad)
+
 ft.app(target=main)
