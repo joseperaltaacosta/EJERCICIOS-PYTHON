@@ -50,31 +50,19 @@ def main(page: ft.Page):
             self.contador = 0
             self.text = ft.Text(str(self.contador))
             return ft.Row([self.text, ft.ElevatedButton("Añadir", on_click=self.sumar)])
-    #page.add(Contador())
-
 
     #VERDURAS
-    dropDown_Menu_verduras=ft.Dropdown(width=300,label="Verduras",options=[ft.dropdown.Option("Pepino")])
-    #page.add(dropDown_Menu_verduras)
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Rábano"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Berengena"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Lechuga"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Pimiento"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Zanahoria"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Tomate"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Melón"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Sandía"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Calabacín"))
-    page.update()
-    dropDown_Menu_verduras.options.append(ft.dropdown.Option("Remolacha"))
+    dropDown_Menu_verduras=ft.Dropdown(width=300,label="Verduras",options=[ft.dropdown.Option("Pepino"),
+                                                                            ft.dropdown.Option("Rábano"),
+                                                                            ft.dropdown.Option("Berengena"),
+                                                                            ft.dropdown.Option("Lechuga"),
+                                                                            ft.dropdown.Option("Pimiento"),
+                                                                            ft.dropdown.Option("Zanahoria"),
+                                                                            ft.dropdown.Option("Tomate"),
+                                                                            ft.dropdown.Option("Melón"),
+                                                                            ft.dropdown.Option("Sandía"),
+                                                                            ft.dropdown.Option("Calabacín"),
+                                                                            ft.dropdown.Option("Remolacha")])
     page.update()
 
 
@@ -88,31 +76,19 @@ def main(page: ft.Page):
             self.contador2 = 0
             self.text2 = ft.Text(str(self.contador2))
             return ft.Row([self.text2, ft.ElevatedButton("Añadir", on_click=self.sumar2)])
-    #page.add(Contador2())
-
 
     #BEBIDAS
-    dropDown_Menu_bebidas=ft.Dropdown(width=300,label="Bebidas",options=[ft.dropdown.Option("Botella agua 0,5L")])
-    #page.add(dropDown_Menu_bebidas)
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Botella agua 1L"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Botella agua 2L"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Latas cocacola"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Cocacola 1L"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Latas fanta"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Fanta 1L"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Latas Nestea"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Monster"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Red Bull"))
-    page.update()
-    dropDown_Menu_bebidas.options.append(ft.dropdown.Option("Vino"))
+    dropDown_Menu_bebidas=ft.Dropdown(width=300,label="Bebidas",options=[ft.dropdown.Option("Botella agua 0,5L"),
+                                                                            ft.dropdown.Option("Botella agua 1L"),
+                                                                            ft.dropdown.Option("Botella agua 2L"),
+                                                                            ft.dropdown.Option("Latas cocacola"),
+                                                                            ft.dropdown.Option("Cocacola 1L"),
+                                                                            ft.dropdown.Option("Latas fanta"),
+                                                                            ft.dropdown.Option("Fanta 1L"),
+                                                                            ft.dropdown.Option("Latas Nestea"),
+                                                                            ft.dropdown.Option("Monster"),
+                                                                            ft.dropdown.Option("Red Bull"),
+                                                                            ft.dropdown.Option("Vino")])
     page.update()
 
 
@@ -126,12 +102,30 @@ def main(page: ft.Page):
             self.contador3 = 0
             self.text3 = ft.Text(str(self.contador3))
             return ft.Row([self.text3, ft.ElevatedButton("Añadir", on_click=self.sumar3)])
-    #page.add(Contador3())
 
+    #POSTRES
+    dropDown_Menu_postres=ft.Dropdown(width=300,label="Postres",options=[ft.dropdown.Option("Tarta de queso"),
+                                                                            ft.dropdown.Option("Danonino"),
+                                                                            ft.dropdown.Option("Petisui"),
+                                                                            ft.dropdown.Option("Flan"),
+                                                                            ft.dropdown.Option("Natillas"),
+                                                                            ft.dropdown.Option("Yogur")])
+    page.update()
+
+    #CONTADOR POSTRES  
+    class Contador4(ft.UserControl):
+        def sumar4(self, e):
+            self.contador4 += 1
+            self.text4.value = str(self.contador4)
+            self.update()
+        def build(self):
+            self.contador4 = 0
+            self.text4 = ft.Text(str(self.contador4))
+            return ft.Row([self.text4, ft.ElevatedButton("Añadir", on_click=self.sumar4)])
 
     #FILAS
-    fila=ft.Row(controls=[dropDown_Menu_frutas,dropDown_Menu_verduras,dropDown_Menu_bebidas])
-    fila_contadores = ft.Row(spacing=250,controls=[Contador(), Contador2(),Contador3()])
+    fila=ft.Row(controls=[dropDown_Menu_frutas,dropDown_Menu_verduras,dropDown_Menu_bebidas,dropDown_Menu_postres])
+    fila_contadores = ft.Row(spacing=250,controls=[Contador(), Contador2(),Contador3(),Contador4()])
     page.add(fila)
     page.add(fila_contadores)
 
@@ -139,7 +133,7 @@ def main(page: ft.Page):
     texto2=ft.Text(value="Lista total",color="red",size=20)
     page.add(texto2)
     def boton_guardar_lista(e):
-        texto2.value = f"Lista total de {textField_Nombre.value} el día {slider_dia.value} del mes {slider_mes.value}: \n {dropDown_Menu_frutas.value}:"
+        texto2.value = f"Lista total de {textField_Nombre.value} el día {slider_dia.value} del mes {slider_mes.value}: \n {dropDown_Menu_frutas.value} \n {dropDown_Menu_verduras.value} \n {dropDown_Menu_bebidas.value} \n {dropDown_Menu_postres.value}"
         page.update()
     boton=ft.FloatingActionButton(icon=ft.icons.FAVORITE, on_click=boton_guardar_lista)
     page.add(boton)
