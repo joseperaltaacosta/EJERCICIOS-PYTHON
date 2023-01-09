@@ -1,6 +1,10 @@
 import flet as ft
 #PAGINA TOTAL
 def main(page: ft.Page):
+    dropDown_Menu_frutas=""
+    dropDown_Menu_verduras=""
+    dropDown_Menu_bebidas=""
+    dropDown_Menu_postres=""
     page.title="LISTA DE LA COMPRA"
 
     #TITULO
@@ -78,21 +82,36 @@ def main(page: ft.Page):
 
     #AÑADIR ELEMENTOS
     Vañadir_elementos=[]
-    def elementos(e):
-        Vañadir_elementos.append(dropDown_Menu_bebidas.value)
-        Vañadir_elementos.append(dropDown_Menu_frutas.value)
-        Vañadir_elementos.append(dropDown_Menu_postres.value)
-        Vañadir_elementos.append(dropDown_Menu_verduras.value)
-        print(Vañadir_elementos)
-
+    def GUARDAR():
+        dropDown_Menu_frutas = ft.dropdown.Option.get()
+        dropDown_Menu_verduras = ft.dropdown.Option.get()
+        dropDown_Menu_bebidas = ft.dropdown.Option.get()
+        dropDown_Menu_postres = ft.dropdown.Option.get()
+        Vañadir_elementos.append(dropDown_Menu_frutas)
+        Vañadir_elementos.append(dropDown_Menu_verduras)
+        Vañadir_elementos.append(dropDown_Menu_bebidas)
+        Vañadir_elementos.append(dropDown_Menu_postres)
+        ft.dropdown.Option.delete(0,len(dropDown_Menu_frutas))
+        ft.dropdown.Option.delete(0,len(dropDown_Menu_verduras))
+        ft.dropdown.Option.delete(0,len(dropDown_Menu_bebidas))
+        ft.dropdown.Option.delete(0,len(dropDown_Menu_postres))
+        print(dropDown_Menu_frutas)
+        print(dropDown_Menu_verduras)
+        print(dropDown_Menu_bebidas)
+        print(dropDown_Menu_postres)
     #BOTON LISTA
     texto2=ft.Text(value="Lista total",color="red",size=20)
     page.add(texto2)
-    def boton_lista(e):
-        mostrar_elementos=print(elementos)
-        texto2.value = f"Lista total de {textField_Nombre.value}: \n {mostrar_elementos}"
-        page.update()
-    boton2=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=boton_lista)
+    boton2=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=f"Lista total de {textField_Nombre.value}: \n {GUARDAR}")
     page.add(boton2)
+
+    #FOTO FRUTERIA
+    img = ft.Image(
+        src=f"https://imagenes.heraldo.es/files/image_654_v1/files/fp/uploads/imagenes/2021/02/06/el-actor-jordi-sanchez-es-antonio-recio-en-lo-que-se-avecina.r_d.1294-49.jpeg",
+        width=300,
+        height=300,
+        fit=ft.ImageFit.CONTAIN,
+    )
+    page.add(img)
 
 ft.app(target=main)
