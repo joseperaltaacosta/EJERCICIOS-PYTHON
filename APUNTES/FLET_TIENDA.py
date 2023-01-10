@@ -25,6 +25,10 @@ def main(page: ft.Page):
     slider_mes=ft.Slider(min=0,max=12,divisions=12,label="Mes:{value}")
     page.add(slider_mes)
 
+    #TEXTO ABAJO
+    texto2=ft.Text(value="Lista total",color="red",size=20)
+    page.add(texto2)
+
     #FRUTAS
     dropDown_Menu_frutas=ft.Dropdown(width=300,label="Frutas",options=[ft.dropdown.Option("Manzana roja"),
                                                                         ft.dropdown.Option("Manzana verde"),
@@ -100,18 +104,8 @@ def main(page: ft.Page):
         print(dropDown_Menu_bebidas)
         print(dropDown_Menu_postres)
     #BOTON LISTA
-    texto2=ft.Text(value="Lista total",color="red",size=20)
-    page.add(texto2)
-    boton2=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=f"Lista total de {textField_Nombre.value}: \n {GUARDAR}")
+    boton2=ft.FloatingActionButton(icon=ft.icons.ADD, on_click=GUARDAR)
     page.add(boton2)
-
-    #FOTO FRUTERIA
-    img = ft.Image(
-        src=f"https://imagenes.heraldo.es/files/image_654_v1/files/fp/uploads/imagenes/2021/02/06/el-actor-jordi-sanchez-es-antonio-recio-en-lo-que-se-avecina.r_d.1294-49.jpeg",
-        width=300,
-        height=300,
-        fit=ft.ImageFit.CONTAIN,
-    )
-    page.add(img)
+    page.update()
 
 ft.app(target=main)
