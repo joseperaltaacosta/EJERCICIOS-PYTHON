@@ -108,4 +108,13 @@ def main(page: ft.Page):
     page.add(boton2)
     page.update()
 
+    #FOTO FRUTERIA
+    img = ft.Image(
+        src=f"https://imagenes.heraldo.es/files/image_654_v1/files/fp/uploads/imagenes/2021/02/06/el-actor-jordi-sanchez-es-antonio-recio-en-lo-que-se-avecina.r_d.1294-49.jpeg",
+        width=300,
+        height=300,
+        fit=ft.ImageFit.CONTAIN,
+    )
+    page.add(img)
+
 ft.app(target=main)
